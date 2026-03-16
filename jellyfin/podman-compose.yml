@@ -1,0 +1,10 @@
+name: jellyfin
+services:
+  jellyfin:
+    image: docker.io/jellyfin/jellyfin:latest
+    container_name: jellyfin
+    volumes:
+      - ${CONFIG_DIR}:/config
+      - jellyfin-cache:/cache
+      - ${MEDIA_DIR}/media:/media
+    network_mode: host
