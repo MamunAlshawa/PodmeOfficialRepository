@@ -13,6 +13,7 @@ services:
     volumes:
       - nextcloud-config:/config
       - nextcloud-data:/data
+      # - /run/user/1000/podman/podman.sock:/var/run/docker.sock:ro
     ports:
       - 8080:80
       - 8443:443
@@ -34,6 +35,19 @@ services:
     volumes:
       - nextcloud-mariadb-config:/config
     restart: unless-stopped
+
+  # collabora:
+  #   image: collabora/code:latest
+  #   container_name: collabora
+  #   environment:
+  #     - aliasgroup1=https://nextcloud.mydomain.com:443
+  #     - DONT_GEN_SSL_CERT=YES
+  #     - extra_params=--o:ssl.enable=false --o:ssl.termination=true
+  #   ports:
+  #     - 9980:9980
+  #   # cap_add:
+  #   #   - MKNOD
+  #   restart: unless-stopped
 
 volumes:
   nextcloud-data:
