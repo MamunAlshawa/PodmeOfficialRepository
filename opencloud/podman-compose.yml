@@ -1,0 +1,32 @@
+services:
+  opencloud:
+    image: opencloudeu/opencloud-rolling:5.2.0
+    user: 1000:1000
+    entrypoint:
+      - /bin/sh
+    command: ["-c", "opencloud init || true; opencloud server"]
+    environment:
+      OC_URL: https://cloud.opencloud.test
+      OC_LOG_LEVEL: info
+      PROXY_TLS: "false"
+      OC_INSECURE: "false"
+      PROXY_ENABLE_BASIC_AUTH: "false"
+      IDM_CREATE_DEMO_USERS: "false"
+      IDM_ADMIN_PASSWORD: "${INITIAL_ADMIN_PASSWORD}"
+      FRONTEND_ARCHIVER_MAX_SIZE: "10000000000"
+    volumes:
+      - csp.yaml:/etc/opencloud/csp.yaml
+      - banned-password-list.txt:/etc/opencloud/banned-password-list.txt
+      - opencloud-config:/etc/opencloud
+      - opencloud-data:/var/lib/opencloud
+    ports:
+      - "127.0.0.1:9200:9200"
+    restart: always
+
+volumes:
+  opencloud-config:
+  opencloud-data:
+# cloud.mydomain.com {
+#     tls internal
+#     reverse_proxy localhost:9200
+# }
