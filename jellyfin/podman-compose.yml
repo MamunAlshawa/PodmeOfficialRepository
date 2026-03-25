@@ -11,6 +11,6 @@ services:
       - "${MEDIA_DIR}:/media"
 
 volumes:
-  jellyfin-cache:
+  podme-jellyfin-cache:
   ${CONFIG_DIR}:
   ${MEDIA_DIR}:
