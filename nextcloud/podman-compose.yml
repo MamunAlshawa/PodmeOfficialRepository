@@ -11,8 +11,8 @@ services:
       # - MYSQL_USER=nextcloud
       # - MYSQL_PASSWORD=nextcloud
     volumes:
-      - nextcloud-config:/config
-      - nextcloud-data:/data
+      - podme-nextcloud-config:/config
+      - podme-nextcloud-data:/data
       # - /run/user/1000/podman/podman.sock:/var/run/docker.sock:ro
     ports:
       - 8080:80
@@ -33,7 +33,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes:
-      - nextcloud-mariadb-config:/config
+      - podme-nextcloud-mariadb-config:/config
     restart: unless-stopped
 
   # collabora:
@@ -50,6 +50,6 @@ services:
   #   restart: unless-stopped
 
 volumes:
-  nextcloud-data:
-  nextcloud-config:
-  nextcloud-mariadb-config:
+  podme-nextcloud-data:
+  podme-nextcloud-config:
+  podme-nextcloud-mariadb-config:
