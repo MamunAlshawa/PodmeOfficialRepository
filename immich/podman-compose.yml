@@ -69,6 +69,6 @@ services:
       disable: false
 
 volumes:
-  immich-model-cache:
+  podme-immich-model-cache:
   ${DB_DATA_LOCATION}:
   ${UPLOAD_LOCATION}:
