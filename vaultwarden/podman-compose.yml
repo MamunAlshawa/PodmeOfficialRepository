@@ -8,6 +8,6 @@ services:
     volumes:
       - podme-vaultwarden-vw-data:/data/
     ports:
-      - 127.0.0.1:8000:80
+      - 8000:80
 volumes:
   podme-vaultwarden-vw-data:
