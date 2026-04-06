@@ -6,9 +6,10 @@ services:
     restart: unless-stopped
     environment:
       DOMAIN: ${DOMAIN} #"https://vw.domain.tld"
+      SIGNUPS_ALLOWED: "true"
     volumes:
       - podme-vaultwarden-vw-data:/data/
     ports:
-      - 8000:80
+      - 127.0.0.1:11001:80
 volumes:
   podme-vaultwarden-vw-data:
