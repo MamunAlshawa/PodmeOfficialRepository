@@ -1,4 +1,11 @@
-:8000 {
+vaultwarden.example.com {
+
+    # HTTP challenge ile otomatik SSL (Let's Encrypt)
     tls internal
-    reverse_proxy localhost:8000
+
+    encode zstd gzip
+
+    reverse_proxy localhost:11001 {
+        header_up X-Real-IP {remote_host}
+    }
 }
