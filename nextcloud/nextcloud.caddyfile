@@ -1,0 +1,11 @@
+nextcloud.podme.com {
+    tls internal
+    header {
+        Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+    }
+    reverse_proxy 127.0.0.1:8080 {
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto https
+    header_up X-Forwarded-Host {host}
+  }
+}
