@@ -1,16 +1,3 @@
 {
-  "AppNotes": "Run this command after fresh install: sed -i '$d' /app/www/public/config/config.php && cat <<EOL >> /app/www/public/config/config.php
-  'trusted_proxies' =>
-  array (
-    0 => '127.0.0.1',
-  ),
-  'forwarded_for_headers' =>
-  array (
-    0 => 'HTTP_X_FORWARDED_FOR',
-  ),
-  'overwriteprotocol' => 'https',
-  'backgroundjobs_mode' => 'cron',
-  'maintenance_window_start' => '02:00',
-);
-EOL"
+  "AppNotes": "Run this command after fresh install:\nsed -i '$d' /app/www/public/config/config.php && cat <<EOL >> /app/www/public/config/config.php\n  'trusted_proxies' =>\n  array (\n    0 => '127.0.0.1',\n  ),\n  'forwarded_for_headers' =>\n  array (\n    0 => 'HTTP_X_FORWARDED_FOR',\n  ),\n  'overwriteprotocol' => 'https',\n  'backgroundjobs_mode' => 'cron',\n  'maintenance_window_start' => '02:00',\n);\nEOL"
 }
