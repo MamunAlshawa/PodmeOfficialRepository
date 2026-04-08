@@ -1,5 +1,5 @@
 {
-  "AppNotes": "Run this command after fresh install: 'sed -i '$d' /app/www/public/config/config.php && cat <<EOL >> /app/www/public/config/config.php
+  "AppNotes": "Run this command after fresh install: sed -i '$d' /app/www/public/config/config.php && cat <<EOL >> /app/www/public/config/config.php
   'trusted_proxies' =>
   array (
     0 => '127.0.0.1',
@@ -12,5 +12,5 @@
   'backgroundjobs_mode' => 'cron',
   'maintenance_window_start' => '02:00',
 );
-EOL'"
+EOL"
 }
