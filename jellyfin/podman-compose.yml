@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     volumes:
       - "${CONFIG_DIR}:/config"
-      - "jellyfin-cache:/cache"
+      - "podme-jellyfin-cache:/cache"
       - "${MEDIA_DIR}:/media"
 
 volumes:
