@@ -26,4 +26,4 @@ services:
 
 volumes:
   podme-ghost:
-  podme-db:
+  podme-ghost-db:
