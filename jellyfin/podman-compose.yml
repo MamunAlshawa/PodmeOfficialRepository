@@ -6,11 +6,11 @@ services:
     container_name: jellyfin
     network_mode: "host"
     volumes:
-      - "${CONFIG_DIR}:/config"
+      - "podme-jellyfin-config:/config"
       - "podme-jellyfin-cache:/cache"
-      - "${MEDIA_DIR}:/media"
+      - "podme-jellyfin-media:/media"
 
 volumes:
   podme-jellyfin-cache:
-  ${CONFIG_DIR}:
-  ${MEDIA_DIR}:
+  podme-jellyfin-config:
+  podme-jellyfin-media:
