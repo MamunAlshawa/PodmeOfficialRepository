@@ -1,5 +1,5 @@
 {
-  "Website": "rustdesk.com"
+  "Website": "rustdesk.com",
   "Version": "0.0.3",
   "AppNotes": "To retrieve your server's public key, execute the following command: cat $HOME/.local/share/containers/storage/volumes/rustdesk-data/_data/id_ed25519.pub"
 }
